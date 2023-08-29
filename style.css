@@ -1,0 +1,159 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  background: hsl(216, 12%, 8%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  perspective-origin: center;
+  border-radius: 20px;
+  padding: 2rem;
+  background: rgb(31, 38, 48);
+}
+
+@media screen and (max-width: 375px) {
+  main {
+    width: 90%;
+  }
+  #thank-you-state #finalRating {
+    width: 80%;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.back {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.container.flip {
+  transform: rotatey(180deg);
+}
+
+#rating-header {
+  font-weight: 700;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(39, 46, 56);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.rating .circle:hover {
+  background: hsl(25, 97%, 53%);
+}
+
+.selected {
+  background-color: lightgray;
+}
+
+p {
+  color: rgb(119, 126, 136);
+  font-size: 15px;
+}
+
+#btn {
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 25px;
+  text-transform: uppercase;
+  color: white;
+  background: hsl(25, 97%, 53%);
+  outline: none;
+  border: none;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#btn:hover {
+  background: white;
+  color: hsl(25, 97%, 53%);
+}
+
+#thank-you-state #finalRating {
+  width: 60%;
+  height: 30px;
+  border-radius: 10px;
+  background: rgb(39, 46, 56);
+  color: hsl(25, 97%, 53%);
+  padding: 0.5em;
+}
+
+.attribution {
+  padding: 1.5rem;
+  height: 2rem;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
